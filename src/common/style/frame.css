@@ -1,0 +1,5 @@
+/*
+* 全部公用样式（import 其他 css)
+*/
+@import './reset.css';
+@import './global.css'
