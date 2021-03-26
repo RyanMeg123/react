@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import {Provider} from 'react-redux'
 // import './common/style/frame.scss'
-
-ReactDOM.render(<App />, document.getElementById("root"));
+import store from './store'
+const Apps = (
+    <Provider store={store}>
+        <App/>
+    </Provider>
+)
+ReactDOM.render(Apps, document.getElementById("root"));
 
 // ReactDOM.render(
 //   <React.StrictMode>

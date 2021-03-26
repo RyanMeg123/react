@@ -1,20 +1,9 @@
-import * as constants from './constants'
+import { combineReducers } from 'redux'
 
-// 初始默认的state
-const defaultState = {
-    myData: null
-}
-export defalut (state = defaultState,action) => {
-  // 由于state是引用类型 不能直接修改 否则是检测不到state发生变化的，因此需要先
-  // 复制一份进行修改 然后再返回新的state
-  let newState = Object.assign({},state);
-  switch (action.type) {
-      case constants.SET_DATA:
-          newState.myData = action.data
-          break;
-  
-      default:
-          return state
-          break;
-  }
-}
+import { reducer as headerReducer } from './header'
+
+const reducer = combineReducers({
+    header: headerReducer
+})
+
+export default reducer
